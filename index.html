@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Chokokutai&family=Dancing+Script:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chokokutai&family=Dancing+Script:wght@400..700&family=Lobster&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Orbitron:wght@400..900&family=Voltaire&display=swap" rel="stylesheet">
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    // https://dashboard.emailjs.com/admin/account
+    emailjs.init("miw6eX92c1H-gK_hh");
+  })();
+</script>
+<script type="text/javascript">
+  window.onload = function () {
+  document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Generate angka acak untuk contact_number
+    this.contact_number.value = (Math.random() * 100000) | 0;
+
+    // Kirim formulir menggunakan EmailJS
+    emailjs.sendForm("service_ev8gg9f", "template_i7q6yl9", this).then(
+      function () {
+        console.log("SUCCESS! Form berhasil dikirim.");
+        alert("Pesan berhasil dikirim!");
+
+        // Reset formulir ke keadaan default (kosongkan semua input)
+        document.getElementById("contact-form").reset();
+      },
+      function (error) {
+        console.error("FAILED...", error);
+        alert("Gagal mengirim pesan. Silakan coba lagi.");
+      }
+    );
+  });
+};
+</script>
+
+
+
+    <title>My Portfolio | Tian Ahmad Setiawan</title>
+    <link rel="icon" type="image/png" href="img/Circle_Logo.png">
+  </head>
+  <body id="home">
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" style="background-color: rgb(36, 36, 59)">
+      <div class="container">
+        <a class="navbar-brand" href="#">Setiaone <span class="navbar-brand2">Portfolio</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Jumbotron -->
+    <section class="bg-info rounded-1 text-center">
+      <div class="jumbotron" style="padding-top: 6rem">
+        <img src="img/Pas.png" alt="Tian Ahmad" width="200" height="200" class="rounded-circle" />
+        <h1 class="display-5 fw-bold" style="text-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.26)">Tian Ahmad Setiawan S.Kom</h1>
+        <p class="fs-4 text-center" style="margin-bottom: 2em;">Digital Creative | Web Developer | Digital Marketing</p> 
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" width="auto">
+        <path
+          fill="#07282f"
+          d="M0,96L12,122.7C24,149,48,203,72,197.3C96,192,120,128,144,96C168,64,192,64,216,74.7C240,85,264,107,288,117.3C312,128,336,128,360,149.3C384,171,408,213,432,229.3C456,245,480,235,504,240C528,245,552,267,576,250.7C600,235,624,181,648,170.7C672,160,696,192,720,176C744,160,768,96,792,106.7C816,117,840,203,864,218.7C888,235,912,181,936,144C960,107,984,85,1008,101.3C1032,117,1056,171,1080,165.3C1104,160,1128,96,1152,85.3C1176,75,1200,117,1224,133.3C1248,149,1272,139,1296,133.3C1320,128,1344,128,1368,122.7C1392,117,1416,107,1428,101.3L1440,96L1440,320L1428,320C1416,320,1392,320,1368,320C1344,320,1320,320,1296,320C1272,320,1248,320,1224,320C1200,320,1176,320,1152,320C1128,320,1104,320,1080,320C1056,320,1032,320,1008,320C984,320,960,320,936,320C912,320,888,320,864,320C840,320,816,320,792,320C768,320,744,320,720,320C696,320,672,320,648,320C624,320,600,320,576,320C552,320,528,320,504,320C480,320,456,320,432,320C408,320,384,320,360,320C336,320,312,320,288,320C264,320,240,320,216,320C192,320,168,320,144,320C120,320,96,320,72,320C48,320,24,320,12,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+    <!-- Jumbotron End -->
+
+    <!-- About Start -->
+    <section id="about" class="aboutme">
+      <div class="container pb-5">
+        <div class="row text-center text-light text-center mb-3">
+          <div class="col">
+            <h1 class="bab">About Me</h1>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6 fs-5 text-light" style="padding: 2rem">
+            <p>
+              Perkenalkan, saya <span><strong>Tian Ahmad Setiawan</strong></span> seorang <span><strong>Digital Creative, Web Developer</strong></span> dan <span><strong>Digital Marketing.</strong></span>
+            </p>
+            <p>
+              Saya berasal dari daerah yang sangat indah di <span><strong>Indonesia</strong></span
+              >, kota <span><strong>Bandung</strong></span> dengan begitu banyak kenangannya.
+            </p>
+            <p>
+              Menempuh <span><strong>Pendidikan</strong></span> selama 13 tahun, mulai dari tingkat sekolah dasar hingga sekolah kejuruan di kota Bandung, serta pendidikan tingkat sarjana di
+              <span><strong>Universitas Pelita Bangsa Cikarang</strong></span> sebagai sarjana <span><strong>Teknik Informatika</strong></span> telah saya lewati dengan penuh kegigihan dan keseriusan.
+            </p>
+            <p>
+              Pengalaman <span><strong>Bekerja</strong></span> yang telah saya jalani yaitu 8 tahun dengan berbagai posisi atau jabatan telah saya jalankan. Dari mulai sebagai Staff Quality hingga sekarang menjadi Staff
+              <span><strong>Content Creator</strong></span> dan <span><strong>Staff Digital Marketing</strong></span
+              >.
+            </p>
+            <p>
+              Selain itu, banyak juga pekerjaan yang bersifat <span><strong>Online, Remote</strong></span> dan <span><strong>Freelance</strong></span> sering saya lakukan khususnya pada bidang
+              <span><strong>Digital Creative</strong></span> dan <span><strong>Web Developer.</strong></span>
+            </p>
+          </div>
+          <div class="col-md-6 text-center" style="padding: 1rem;">
+            <div class="slider-container">
+              <div class="slider">
+                <div class="slide"><img src="img/ava1.jpg" alt="aboutme" width="400" height="600" class="img-thumbnail" /></div>
+                <div class="slide"><img src="img/ava2.jpg" alt="aboutme" width="400" height="500" class="img-thumbnail" /></div>
+                <div class="slide"><img src="img/ava3.jpg" alt="aboutme" width="400" height="500" class="img-thumbnail" /></div>
+                <div class="slide"><img src="img/graduate.jpg" alt="aboutme" width="400" height="500" class="img-thumbnail" /></div>
+              </div>
+              <!-- <button class="prevslide" onclick="prevSlide()">
+                <svg id="Layer_1" style="enable-background: new 0 0 64 64" version="1.1" viewbox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style type="text/css">
+                    .st0 {
+                      fill: #134563;
+                    }
+                  </style>
+                  <g>
+                    <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                      <polyline class="st0" id="Fill-35" points="-199.1,-289 -212.9,-302.7 -199.1,-316.4 -197.1,-314.4 -208.9,-302.7 -197.1,-291      -199.1,-289    "></polyline>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+              <button class="nextslide right" onclick="nextSlide()">
+                <svg id="Layer_1" style="enable-background: new 0 0 64 64" version="1.1" viewbox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <style type="text/css">
+                    .st0 {
+                      fill: #134563;
+                    }
+                  </style>
+                  <g>
+                    <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                      <polyline class="st0" id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    "></polyline>
+                    </g>
+                  </g>
+                </svg>
+              </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
+        <path
+          fill="#f1125c"
+          d="M0,288L10.4,245.3C20.9,203,42,117,63,85.3C83.5,53,104,75,125,80C146.1,85,167,75,188,101.3C208.7,128,230,192,250,224C271.3,256,292,256,313,213.3C333.9,171,355,85,376,53.3C396.5,21,417,43,438,80C459.1,117,480,171,501,176C521.7,181,543,139,563,138.7C584.3,139,605,181,626,186.7C647,192,668,160,689,122.7C709.6,85,730,43,751,42.7C772.2,43,793,85,814,96C834.8,107,856,85,877,101.3C897.4,117,918,171,939,208C960,245,981,267,1002,234.7C1022.6,203,1043,117,1064,90.7C1085.2,64,1106,96,1127,106.7C1147.8,117,1169,107,1190,96C1210.4,85,1231,75,1252,101.3C1273,128,1294,192,1315,186.7C1335.7,181,1357,107,1377,80C1398.3,53,1419,75,1430,85.3L1440,96L1440,320L1429.6,320C1419.1,320,1398,320,1377,320C1356.5,320,1336,320,1315,320C1293.9,320,1273,320,1252,320C1231.3,320,1210,320,1190,320C1168.7,320,1148,320,1127,320C1106.1,320,1085,320,1064,320C1043.5,320,1023,320,1002,320C980.9,320,960,320,939,320C918.3,320,897,320,877,320C855.7,320,835,320,814,320C793,320,772,320,751,320C730.4,320,710,320,689,320C667.8,320,647,320,626,320C605.2,320,584,320,563,320C542.6,320,522,320,501,320C480,320,459,320,438,320C417.4,320,397,320,376,320C354.8,320,334,320,313,320C292.2,320,271,320,250,320C229.6,320,209,320,188,320C167,320,146,320,125,320C104.3,320,83,320,63,320C41.7,320,21,320,10,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+    <!-- About End -->
+
+    <!-- Projects Start -->
+    <section id="projects" class="myproject">
+      <div class="container pb-5" style="margin-bottom: -1em;">
+        <div class="row text-center mb-4">
+          <div class="col text-warning">
+            <h1 class="bab">My Projects</h1>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <!-- Segment Card WD -->
+          <div class="col" id="slidecard">
+            <h2 class="subbab text-center" style="margin-bottom: 0.5em;">Web Development & Programmer</h2>
+            <div id="slideshow">
+              <div class="card">
+                <img src="img/project/webdev/ppob.png" class="card-img-top" alt="Desktop App" height="325" width="325" />
+                <div class="card-body"> 
+                  <h5 class="card-title">Aplikasi PPOB (Payment Point Online Bank)</h5>
+                  <p class="card-text">Sebagai Web Developer dan Programmer yang berpengalaman selama 2 tahun, menggunakan bahasa pemrograman seperti HTML, HTML5, CSS, Javascript, PHP Native, PHP Laravel, React Js, Node Js, Delphi dan Kotlin. Serta mahir menggunakan aplikasi web design Figma.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/1DGcL_Nm85cC00doOBDIjGIFRhMjSn9Lu?usp=sharing">Lihat Project >></a></h6>
+                </div>
+              </div>
+              <div class="card">
+                <img src="img/project/webdev/E-COMMERCE.jpg" class="card-img-top" alt="Desktop App" height="325" width="325" />
+                <div class="card-body">
+                  <h5 class="card-title">Aplikasi E-Commerce Berbasis Web</h5>
+                  <p class="card-text">Sebagai Web Developer dan Programmer yang berpengalaman selama 2 tahun, menggunakan bahasa pemrograman seperti HTML, HTML5, CSS, Javascript, PHP Native, PHP Laravel, React Js, Node Js, Delphi dan Kotlin. Serta mahir menggunakan aplikasi web design Figma.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/1DGcL_Nm85cC00doOBDIjGIFRhMjSn9Lu?usp=sharing">Lihat Project >></a></h6>
+                </div>
+              </div>
+              <div class="card">
+                <img src="img/project/webdev/DESKTOP APPLICATION 2.jpg" class="card-img-top" alt="Desktop App" height="325" width="325" />
+                <div class="card-body">
+                  <h5 class="card-title">Aplikasi Desktop Point Of Sales</h5>
+                  <p class="card-text">Sebagai Web Developer dan Programmer yang berpengalaman selama 2 tahun, menggunakan bahasa pemrograman seperti HTML, HTML5, CSS, Javascript, PHP Native, PHP Laravel, React Js, Node Js, Delphi dan Kotlin. Serta mahir menggunakan aplikasi web design Figma.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/1DGcL_Nm85cC00doOBDIjGIFRhMjSn9Lu?usp=sharing">Lihat Project >></a></h6>
+                </div>
+              </div>
+            </div>
+            <div id="arrow-left" class="arrow"></div>
+            <div id="arrow-right" class="arrow"></div>
+          </div>
+          <!-- Segment Card GD -->
+          <div class="col" id="slidecard">
+            <h1 class="subbab text-center">Graphic Design</h1>
+            <div id="slideshow2">
+              <div class="card">
+                <img src="img/project/dg/DESIGN BROSUR3.jpg" class="card-img-top" alt="Ecommerce" height="325" width="325" />
+                <div class="card-body">
+                  <h5 class="card-title">Desain Flyer, Feed IG dan Banner</h5>
+                  <p class="card-text">Sebagai Graphic Designer yang berpengalaman selama 4 tahun. Bidang sosial media dan entertainment merupakan bidang yang sering menggunakan jasa saya dalam pembuatan desain flyer, poster, feed IG, story IG, dan Banner. Selain desain grafis pada tampilan 2D, tidak jarang saya senang membuat desain ilustrasi dan vector.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/1VtgSPCVkm5pEnTbOFSsC82Kuoto0wbvd?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+              <div class="card">
+                <img src="img/project/dg/Jaket-1.png" class="card-img-top" alt="Ecommerce" height="325" width="325" />
+                <div class="card-body">
+                  <h5 class="card-title">Desain Mockup</h5>
+                  <p class="card-text">Sebagai Graphic Designer yang berpengalaman selama 4 tahun. Bidang sosial media dan entertainment merupakan bidang yang sering menggunakan jasa saya dalam pembuatan desain flyer, poster, feed IG, story IG, dan Banner. Selain desain grafis pada tampilan 2D, tidak jarang saya senang membuat desain ilustrasi dan vector.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/1VtgSPCVkm5pEnTbOFSsC82Kuoto0wbvd?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+              <div class="card">
+                <img src="img/project/dg/PP1.png" class="card-img-top" alt="Ecommerce" height="325" width="325" />
+                <div class="card-body">
+                  <h5 class="card-title">Desain Logo</h5>
+                  <p class="card-text">Sebagai Graphic Designer yang berpengalaman selama 4 tahun. Bidang sosial media dan entertainment merupakan bidang yang sering menggunakan jasa saya dalam pembuatan desain flyer, poster, feed IG, story IG, dan Banner. Selain desain grafis pada tampilan 2D, tidak jarang saya senang membuat desain ilustrasi dan vector.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/1VtgSPCVkm5pEnTbOFSsC82Kuoto0wbvd?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+            </div>
+            <div id="arrow-left2" class="arrow"></div>
+            <div id="arrow-right2" class="arrow"></div>
+          </div>
+          <!-- Segment CC -->
+          <div class="col" id="slidecard">
+            <h1 class="subbab text-center">Content Creator</h1>
+            <div id="slideshow3">
+              <div class="card">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tian.setiawan13/video/7423621457537731845" data-video-id="7423621457537731845" style="width: 325px; height: 300px">
+                  <section>
+                    <a target="_blank" title="@tian.setiawan13" href="https://www.tiktok.com/@tian.setiawan13?refer=embed">@tian.setiawan13</a
+                    ><a target="_blank" title="♬ suara asli  - tiansetiawan13" href="https://www.tiktok.com/music/suara-asli-tiansetiawan13-7423621503453481734?refer=embed">♬ suara asli - tiansetiawan13</a>
+                  </section>
+                </blockquote>
+                <div class="card-body">
+                  <h5 class="card-title">Konten Sosial Media</h5>
+                  <p class="card-text">Menekuni Content Creator selama 5 tahun lebih dan merupakan hobi yang tidak pernah dilewatkan untuk dilakukan setiap harinya, bidang ini sangat memacu kreatifitas dan menyenangkan untuk diekspresikan, konten yang saya tekuni terfokus di semua platform sosial media.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/18Mqb1-CL5wEXE8xDM4lIHh-qxTw1ify7?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+              <div class="card">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tian.setiawan13/video/7438154472208993556" data-video-id="7438154472208993556" style="max-width: 325px; min-width: 325px">
+                  <section>
+                    <a target="_blank" title="@tian.setiawan13" href="https://www.tiktok.com/@tian.setiawan13?refer=embed">@tian.setiawan13</a>
+                    <a target="_blank" title="♬ APT. - Espinho Producer" href="https://www.tiktok.com/music/APT-7430605675048421392?refer=embed">♬ APT. - Espinho Producer</a>
+                  </section>
+                </blockquote>
+                <div class="card-body">
+                  <h5 class="card-title">Affiliator Sosial Media</h5>
+                  <p class="card-text">Menekuni Content Creator selama 5 tahun lebih dan merupakan hobi yang tidak pernah dilewatkan untuk dilakukan setiap harinya, bidang ini sangat memacu kreatifitas dan menyenangkan untuk diekspresikan, konten yang saya tekuni terfokus di semua platform sosial media.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/18Mqb1-CL5wEXE8xDM4lIHh-qxTw1ify7?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+            </div>
+            <div id="arrow-left3" class="arrow"></div>
+            <div id="arrow-right3" class="arrow"></div>
+          </div>
+          <!-- Segment VE -->
+          <div class="col" id="slidecard">
+            <h1 class="subbab text-center">Video Editor</h1>
+            <div id="slideshow4">
+              <div class="card">
+                <iframe
+                  class="card-img-top"
+                  width="325"
+                  height="325"
+                  src="https://www.youtube.com/embed/62HuHltSHs4?si=YTFqlPZSoZYZ9nwR"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <div class="card-body">
+                  <h5 class="card-title">Video Editor Konten Youtube</h5>
+                  <p class="card-text">Video Editor merupakan dunia pertama dalam dunia digital kreatif hingga membuka jalan menuju bidang-bidang kreatif yang lainnya. Menjalani sebagi editor pada video youtube pribadi sebagai youtubers, dimulai dari tahun 2016 dengan fokus konten pada entertainment dan musik.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/12909M8o27LtF3KlIkDLLvVQJpX4LWAcj?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+              <div class="card">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/1OZm0pwPFu4?si=AVNWtaRoHCAL9039"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <div class="card-body">
+                  <h5 class="card-title">Video Editor Cinematic</h5>
+                  <p class="card-text">Video Editor merupakan dunia pertama dalam dunia digital kreatif hingga membuka jalan menuju bidang-bidang kreatif yang lainnya. Menjalani sebagi editor pada video youtube pribadi sebagai youtubers, dimulai dari tahun 2016 dengan fokus konten pada entertainment dan musik.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/12909M8o27LtF3KlIkDLLvVQJpX4LWAcj?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+            </div>
+            <div id="arrow-left4" class="arrow"></div>
+            <div id="arrow-right4" class="arrow"></div>
+          </div>
+          <!-- Segment MG -->
+          <div class="col" id="slidecard">
+            <h1 class="subbab text-center">Motion Graphic</h1>
+            <div id="slideshow5">
+              <div class="card">
+                <iframe
+                  class="card-img-top"
+                  src="img/project/mg/Non Skipable Video.mp4"
+                  frameborder="0"
+                  width="325"
+                  height="325"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <div class="card-body">
+                  <h5 class="card-title">Non Skipable Video</h5>
+                  <p class="card-text">Pengalaman pada dunia Motion Graphic dijalani bersamaan dengan kegiatan sebagai video editor. Desain visual yang sering dibuat yaitu intro judul film, iklan produk dan konten aksi.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/1hrcWFMnCvp34rRICWLhjyrvE08kuvJhV?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+              <div class="card">
+                <iframe
+                  class="card-img-top"
+                  src="img/project/mg/Video In Feed.mp4"
+                  frameborder="0"
+                  width="325"
+                  height="325"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <div class="card-body">
+                  <h5 class="card-title">Video In Feed</h5>
+                  <p class="card-text">Pengalaman pada dunia Motion Graphic dijalani bersamaan dengan kegiatan sebagai video editor. Desain visual yang sering dibuat yaitu intro judul film, iklan produk dan konten aksi.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/1hrcWFMnCvp34rRICWLhjyrvE08kuvJhV?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+            </div>
+            <div id="arrow-left5" class="arrow"></div>
+            <div id="arrow-right5" class="arrow"></div>
+          </div>
+          <!-- Segment PE -->
+          <div class="col" id="slidecard">
+            <h1 class="subbab text-center">Photo Editor</h1>
+            <div id="slideshow6">
+              <div class="card">
+                <img src="img/project/pe/EXAMPLE 1.jpg" class="card-img-top" alt="carousel" height="325" width="325" />
+                <div class="card-body">
+                  <h5 class="card-title">Photo Wedding Editor</h5>
+                  <p class="card-text">Menghandle jasa edit atau retouch photo dan pencetakan foto dalam bentuk photo book atau photo dinding/5R.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/19XiQJMj2m9PsxYdyMSvOZ0tZJj8qjRAy?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+              <div class="card">
+                <img src="img/project/pe/EXAMPLE 2.jpg" class="card-img-top" alt="carousel" height="325" width="325" />
+                <div class="card-body">
+                  <h5 class="card-title">Photo Wedding Editor</h5>
+                  <p class="card-text">Menghandle jasa edit atau retouch photo dan pencetakan foto dalam bentuk photo book atau photo dinding/5R.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/19XiQJMj2m9PsxYdyMSvOZ0tZJj8qjRAy?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+              <div class="card">
+                <img src="img/project/pe/EXAMPLE 3.jpg" class="card-img-top" alt="carousel" height="325" width="325" />
+                <div class="card-body">
+                  <h5 class="card-title">Photo Wedding Editor</h5>
+                  <p class="card-text">Menghandle jasa edit atau retouch photo dan pencetakan foto dalam bentuk photo book atau photo dinding/5R.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/drive/folders/19XiQJMj2m9PsxYdyMSvOZ0tZJj8qjRAy?usp=drive_link">Lihat Project >></a></h6>
+                </div>
+              </div>
+            </div>
+            <div id="arrow-left6" class="arrow"></div>
+            <div id="arrow-right6" class="arrow"></div>
+          </div>
+          <!-- Segment DM -->
+          <div class="col">
+            <h1 class="subbab text-center">Digital Marketing</h1>
+            <div class="card">
+              <img src="img/project/dm/DMResult.png" class="card-img-top" alt="carousel" height="325" width="325" />
+              <div class="card-body">
+                <h5 class="card-title">Digital Marekting Web & Sosial Media</h5>
+                <p class="card-text">Melakukan pembuatan konsep konten di sosial media, melakukan editing design dan media
+                  video, melakukan copywriting, mengolah promosi produk dan konten sosial media, mengatur strategi pemasaran produk pada platform sosial media melalui tools meta ads, tiktok ads, dan google ads.</p>
+                  <h6 class="linkprojek"><a href="https://drive.google.com/file/d/19505mJNRfXPefYy0PdlHEcOnkEtEZHCQ/view?usp=drive_link">Lihat Project >></a></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Project End -->
+
+    <!-- Contact Start -->
+    <section class="sectioncontact" id="contact">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400">
+        <path
+        fill="#f1125c"
+          d="M0,192L48,208C96,224,192,256,288,224C384,192,480,96,576,80C672,64,768,128,864,165.3C960,203,1056,213,1152,192C1248,171,1344,117,1392,90.7L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h1 class="bab">Contact Me</h1>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form id="contact-form">
+              <div class="mb-3">
+                <input type="hidden" name="contact_number" />
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" name="user_name" aria-describedby="name" />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Alamat Email</label>
+                <input type="email" name="user_email" class="form-control" id="email" aria-describedby="email" />
+              </div>
+              <div class="mb-3">
+                <label for="pesan" class="form-label">Pesan</label>
+                <textarea class="form-control" id="pesan" name="message" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Kirim</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 310">
+        <path
+          fill="#0d6efd"
+          fill-opacity="1"
+          d="M0,96L48,128C96,160,192,224,288,234.7C384,245,480,203,576,208C672,213,768,267,864,240C960,213,1056,107,1152,90.7C1248,75,1344,149,1392,186.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+    <!-- Contact End -->
+
+    <!-- Footer Start -->
+    <footer class="bg-primary text-white text-center pb-3">
+      <p class="end">
+        Created and Copyright by<i class="bi bi-suit-heart-fill"></i><span><a href="https://www.instagram.com/tiansetiaone_/" class="text-white fw-bold">Tian Ahmad Setiawan</a></span>
+      </p>
+      <div class="sosialmedia">
+        <a href="https://www.instagram.com/tiansetiaone_/" class="text-white fw-bold"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.youtube.com/@setiaoneberkarya3021" class="text-white fw-bold"><i class="bi bi-youtube"></i></a>
+        <a href="https://web.facebook.com/tianzz.arshivan/" class="text-white fw-bold"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.tiktok.com/@tian.setiawan13/" class="text-white fw-bold"><i class="bi bi-tiktok"></i></a>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+      const slider = document.querySelector(".slider");
+      const slideItems = document.querySelectorAll(".slide");
+
+      let index = 0;
+      let interval;
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      function startSlide() {
+        interval = setInterval(nextSlide, 5000);
+      }
+
+      function nextSlide() {
+        index = (index + 1) % slideItems.length;
+        updateSlide();
+      }
+
+      function prevSlide() {
+        index = (index - 1 + slideItems.length) % slideItems.length;
+        updateSlide();
+      }
+
+      function updateSlide() {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      slider.addEventListener("mouseenter", () => clearInterval(interval));
+      slider.addEventListener("mouseleave", startSlide);
+
+      slider.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+      });
+
+      slider.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+      });
+
+      function handleSwipe() {
+        const SWIPE_THRESHOLD = 100;
+
+        if (touchEndX - touchStartX > SWIPE_THRESHOLD) {
+          prevSlide();
+        } else if (touchStartX - touchEndX > SWIPE_THRESHOLD) {
+          nextSlide();
+        }
+      }
+
+      startSlide();
+    </script>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
+    <!-- fungsi slideshow -->
+    <!-- <script>
+      let sliderImages = document.querySelectorAll("#slideshow .card"),
+          arrowLeft = document.querySelector("#arrow-left"),
+          arrowRight = document.querySelector("#arrow-right"),
+          current = 0;
+          
+          // Clear all images
+          function reset() {
+          for (let i = 0; i < sliderImages.length; i++) {
+            sliderImages[i].style.display = "none";
+              }
+          }
+          
+          // Initial slide
+          function startSlider() {
+          reset();
+          sliderImages[0].style.display = "block";
+          }
+          
+          // Show previous
+          function slideLeft() {
+          reset();
+          sliderImages[current - 1].style.display = "block";
+          current--;
+          }
+          
+          // Show next
+          function slideRight() {
+          reset();
+          sliderImages[current + 1].style.display = "block";
+          current++;
+          }
+          
+          // Left arrow click
+          arrowLeft.addEventListener("click", function () {
+          if (current === 0) {
+            current = sliderImages.length;
+          }
+          slideLeft();
+          });
+          
+          // Right arrow click
+          arrowRight.addEventListener("click", function () {
+          if (current === sliderImages.length - 1) {
+            current = -1;
+          }
+          slideRight();
+          });
+          
+          startSlider();
+      
+      </script> -->
+
+    <!-- <script>
+      var indexx = 0;
+      var images = document.querySelectorAll("#slideshow .card");
+      var intervall = setInterval(slideshow, 1000);
+
+      function slideshow() {
+        images[indexx].style.opacity = "0";
+        indexx = (indexx + 1) % images.length;
+        images[indexx].style.opacity = "1";
+      }
+    </script> -->
+
+    <!-- <script>
+      const sliders = document.querySelector("#slideshow");
+      const slideItemss = document.querySelectorAll(".card");
+
+      let indexx = 0;
+      let intervall;
+      let ttouchStartX = 0;
+      let ttouchEndX = 0;
+
+      function startSlides() {
+        intervall = setInterval(nextSlides, 5000);
+      }
+
+      function nextSlides() {
+        indexx = (indexx + 1) % slideItemss.length;
+        updateSlides();
+      }
+
+      function prevSlides() {
+        indexx = (indexx - 1 + slideItemss.length) % slideItemss.length;
+        updateSlides();
+      }
+
+      function updateSlides() {
+        sliders.style.transform = `translateX(-${indexx * 100}%)`;
+      }
+
+      sliders.addEventListener("mouseenter", () => clearInterval(intervall));
+      sliders.addEventListener("mouseleave", startSlides);
+
+      sliders.addEventListener("touchstart", (e) => {
+        ttouchStartX = e.touches[0].clientX;
+      });
+
+      sliders.addEventListener("touchend", (e) => {
+        ttouchEndX = e.changedTouches[0].clientX;
+        handleSwipes();
+      });
+
+      function handleSwipes() {
+        const SWIPE_THRESHOLD = 100;
+
+        if (ttouchEndX - ttouchStartX > SWIPE_THRESHOLD) {
+          prevSlides();
+        } else if (ttouchStartX - ttouchEndX > SWIPE_THRESHOLD) {
+          nextSlides();
+        }
+      }
+
+      startSlides();
+    </script> -->
+
+    <script>
+      class Slider {
+        constructor(sliderSelector, arrowLeftSelector, arrowRightSelector) {
+          this.sliderImages = document.querySelectorAll(sliderSelector);
+          this.arrowLeft = document.querySelector(arrowLeftSelector);
+          this.arrowRight = document.querySelector(arrowRightSelector);
+          this.current = 0;
+
+          this.init();
+        }
+
+        // Clear all images
+        reset() {
+          this.sliderImages.forEach((image) => {
+            image.style.display = "none";
+          });
+        }
+
+        // Initial slide
+        startSlider() {
+          this.reset();
+          if (this.sliderImages.length > 0) {
+            this.sliderImages[0].style.display = "block";
+          }
+        }
+
+        // Show previous
+        slideLeft() {
+          this.reset();
+          this.current = this.current === 0 ? this.sliderImages.length - 1 : this.current - 1;
+          this.sliderImages[this.current].style.display = "block";
+        }
+
+        // Show next
+        slideRight() {
+          this.reset();
+          this.current = this.current === this.sliderImages.length - 1 ? 0 : this.current + 1;
+          this.sliderImages[this.current].style.display = "block";
+        }
+
+        // Initialize event listeners
+        init() {
+          this.startSlider();
+
+          if (this.arrowLeft) {
+            this.arrowLeft.addEventListener("click", () => this.slideLeft());
+          }
+
+          if (this.arrowRight) {
+            this.arrowRight.addEventListener("click", () => this.slideRight());
+          }
+        }
+      }
+
+      // Example usage for multiple sliders
+      const slider1 = new Slider("#slideshow .card", "#arrow-left", "#arrow-right");
+      const slider2 = new Slider("#slideshow2 .card", "#arrow-left2", "#arrow-right2");
+      const slider3 = new Slider("#slideshow3 .card", "#arrow-left3", "#arrow-right3");
+      const slider4 = new Slider("#slideshow4 .card", "#arrow-left4", "#arrow-right4");
+      const slider5 = new Slider("#slideshow5 .card", "#arrow-left5", "#arrow-right5");
+      const slider6 = new Slider("#slideshow6 .card", "#arrow-left6", "#arrow-right6");
+    </script>
+  </body>
+</html>
